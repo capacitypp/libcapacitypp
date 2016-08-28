@@ -1,15 +1,12 @@
-OBJS=sample.o
+OBJS=Exception.o
 BUILDPATH=./build
 OBJPATHS=$(addprefix $(BUILDPATH)/, $(OBJS))
-LIBCAPACITYPPPREFIX=/usr/local/libcapacitypp
-INCLUDE=$(strip -I$(LIBCAPACITYPPPREFIX)/include)
-CPPFLAGS=$(INCLUDE) -Wall -O2 -std=c++14 -MMD
-LDFLAGS=-L$(LIBCAPACITYPPPREFIX)/lib -lstdc++ -lcapacitypp
+CPPFLAGS=$(INCLUDE) -fPIC -Wall -O2 -std=c++14 -MMD
 CXX=ccache clang++
-TARGET=sample
+TARGET=Exception.a
 
 all: makefolder $(OBJPATHS)
-	$(CXX) -o $(TARGET) $(OBJPATHS) $(LDFLAGS)
+	ar rs $(TARGET) $(OBJPATHS)
 
 $(BUILDPATH)/%.o : %.cpp
 	@mkdir -p $(dir $@)

@@ -1,6 +1,7 @@
 build
 *.so
-sample/sample
+samples/Exception/Exception
+samples/data
 
 # Compiled Object files
 *.slo
