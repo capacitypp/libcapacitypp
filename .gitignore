@@ -1,3 +1,7 @@
+build
+*.so
+sample/sample
+
 # Compiled Object files
 *.slo
 *.lo

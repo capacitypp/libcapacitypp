@@ -1,2 +1,2 @@
-# libutil
+# libcapacitypp
 Utility library for C++
